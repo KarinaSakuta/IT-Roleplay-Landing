@@ -4,7 +4,7 @@
   "description": "Landing page for It-Roleplay game.",
   "main": "src/app.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode=development --color",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode=development --color",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
     "lint": "eslint --ext .js,.jsx, src webpack.config.js webpack.config.dev.js",
     "lint:fix": "eslint --ext .js,.jsx, src webpack.config.js webpack.config.dev.js --fix"
