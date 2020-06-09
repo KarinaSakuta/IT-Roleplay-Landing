@@ -1,6 +1,23 @@
 @import "../assets/fonts/bicubik/bicubik";
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-family: Bicubik, sans-serif;
     font-variant: small-caps;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(45deg, darken($action, 40%) 0%, $absolute-black 100%);
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
 }
