@@ -1,0 +1,10 @@
+$path: "../assets/fonts/bicubik/";
+
+@font-face {
+    font-family: "Bicubik";
+    src: url("#{$path}bicubik.woff2") format("woff2"),
+        url("#{$path}bicubik.woff") format("woff"),
+        url("#{$path}bicubik.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
