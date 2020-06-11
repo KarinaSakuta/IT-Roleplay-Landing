@@ -1,0 +1,27 @@
+.menu {
+    @include mobile {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: $absolute-black;
+        height: 40px;
+        padding-left: 60px;
+    }
+    
+    &__list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__element {
+        user-select: none;
+        margin-right: 40px;
+        font-size: 18px;
+
+        @include flashColorOnHover(darken($text, 20%));
+    }
+}

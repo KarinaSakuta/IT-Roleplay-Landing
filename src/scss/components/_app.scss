@@ -1,7 +1,26 @@
 .app {
-    height: 300px; // TODO: remove
-    width: 300px;
-    color: #ff0000;
-    background-image: img("example.png");
-    user-select: none;
+    max-width: 1200px;
+    margin: 40px;
+    background: rgba($absolute-black, 0.4);
+    
+    @include border;
+
+    @include mobile {
+        margin: 20px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @include tablet {
+        min-width: 750px;
+        margin: 20px;
+    }
+
+    @include desktop {
+        min-width: 1000px;
+    }
+
+    @include hd {
+        min-width: 1200px;
+    }
 }

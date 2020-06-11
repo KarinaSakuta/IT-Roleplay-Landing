@@ -14,13 +14,16 @@
     "not < 1%"
   ],
   "dependencies": {
+    "classnames": "^2.2.6",
     "core-js": "3.6.5",
     "normalize.css": "8.0.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-favicon": "0.0.18"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-transform-runtime": "7.10.1",
     "@babel/preset-env": "7.10.2",
     "@babel/preset-react": "7.10.1",
