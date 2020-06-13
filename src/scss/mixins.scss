@@ -21,3 +21,40 @@
     @content;
   }
 }
+
+@mixin border {
+  border: 3px solid $borders;
+}
+
+@mixin flashBorderOnHover($color) {
+  transition: border-color 0.15s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    transition: border-color 0s;
+    border-color: $color;
+  }
+}
+
+@mixin flashColorOnHover($color) {
+  transition: color 0.15s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    cursor: pointer;
+    transition: color 0s;
+    color: $color;
+  }
+}
+
+@mixin flashColorAndBackgroundOnHover($color, $backgroundColor) {
+  transition: color 0.15s, background-color 0.15s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    cursor: pointer;
+    transition: 0s;
+    background-color: $backgroundColor;
+    color: $color;
+  }
+}

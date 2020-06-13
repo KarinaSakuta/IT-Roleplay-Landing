@@ -1,8 +1,8 @@
 {
   "extends": ["airbnb"],
   "root": true,
+  "parser": "babel-eslint",
   "parserOptions": {
-    "parser": "babel-eslint",
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
@@ -11,6 +11,10 @@
     "es6": true
   },
   "rules": {
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
     "react/prefer-stateless-function": "off",
     "implicit-arrow-linebreak": "off",

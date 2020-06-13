@@ -1,0 +1,106 @@
+.mobile-menu {
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: none;
+    }
+
+    @include hd {
+        display: none;
+    }
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $absolute-black;
+    height: 40px;
+    padding-left: 60px;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 7px;
+        left: 13px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+
+        &-element, &-element::before, &-element::after {
+            transition: transform .3s, background-color .3s;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: darken($text, 50%);
+        }
+
+        &-element {
+            &::before {
+                content: '';
+                top: -8px;
+            }
+
+            &::after {
+                content: '';
+                top: 8px;
+            }
+        }
+
+        &_pressed {
+            .mobile-menu__btn-element {
+                background-color: transparent;
+                transform: rotate(45deg);
+    
+                &::before {
+                    background-color: darken($text, 50%);
+                    top: 0;
+                    transform: rotate(0);
+                }
+    
+                &::after {
+                    background-color: darken($text, 50%);
+                    top: 0;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    &__box {
+        display: block;
+        position: fixed;
+        top: 0;
+        transform: translateX(-150%);
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding-top: 100px;
+        list-style: none;
+        text-align: center;
+        background-color: $absolute-black;
+        transition: transform .5s;
+
+        &_pressed {
+            transform: translateX(-28%);
+        }
+    }
+
+    &__item {
+        padding: 12px 24px;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+
+        @include flashColorAndBackgroundOnHover(darken($text, 90%), $text);
+    }
+}

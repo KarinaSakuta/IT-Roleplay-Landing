@@ -21,13 +21,24 @@ const transformRuntimeOptions = {
 };
 
 const babelOptions = {
-  presets: [['@babel/preset-env', babelPresetEnvOptions]],
-  plugins: [['@babel/plugin-transform-runtime', transformRuntimeOptions]],
+  presets: [
+    ['@babel/preset-env', babelPresetEnvOptions],
+  ],
+  plugins: [
+    '@babel/plugin-proposal-class-properties',
+    ['@babel/plugin-transform-runtime', transformRuntimeOptions],
+  ],
 };
 
 const babelReactOptions = {
-  presets: [['@babel/preset-env', babelPresetEnvOptions], '@babel/react'],
-  plugins: [['@babel/plugin-transform-runtime', transformRuntimeOptions]],
+  presets: [
+    '@babel/react',
+    ['@babel/preset-env', babelPresetEnvOptions],
+  ],
+  plugins: [
+    '@babel/plugin-proposal-class-properties',
+    ['@babel/plugin-transform-runtime', transformRuntimeOptions],
+  ],
 };
 
 module.exports = () => merge(
