@@ -1,0 +1,128 @@
+.description-slider {
+  position: relative;
+
+  @include desktop {
+    padding: 0 20px;
+  }
+
+  @include hd {
+    padding: 0 20px;
+  }
+
+  &__container, &__item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__container {
+    transition: transform .5s;
+  }
+
+  &__item {
+    display: flex;
+    min-width: 100%;
+    height: fit-content;
+    padding: 30px;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__text {
+    margin: 20px;
+    max-width: 550px;
+
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+
+  &__left-btn, &__right-btn {
+    position: absolute;
+    width: 20vw;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: $borders;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      color: darken($borders, 50%);
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet  {
+      display: none;
+    }
+  }
+
+  &__left-btn {
+    justify-content: flex-start;
+    padding-left: 10px;
+    left: 0;
+  }
+
+  &__right-btn {
+    justify-content: flex-end;
+    padding-right: 10px;
+    right: 10px;
+  }
+
+  &__img {
+    user-select: none;
+    margin-right: 20px;
+
+    @include mobile {
+      max-width: 100%;
+      margin: 0 auto 20px;
+    }
+
+    @include tablet {
+      max-width: 350px;
+      max-height: 350px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 500px;
+    margin: 30px auto;
+
+    &-element {
+      width: 10px;
+      height: 10px;
+      background-color: $borders;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($borders, 30%);
+      }
+
+      &_active {
+        background-color: darken($borders, 30%);
+      }
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      @include mobile {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

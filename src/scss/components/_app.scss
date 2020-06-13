@@ -2,6 +2,7 @@
     max-width: 1200px;
     margin: 40px;
     background: rgba($absolute-black, 0.4);
+    overflow: hidden;
     
     @include border;
 
