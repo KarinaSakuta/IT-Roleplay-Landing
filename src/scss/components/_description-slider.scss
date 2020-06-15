@@ -53,9 +53,7 @@
     cursor: pointer;
     user-select: none;
 
-    &:hover {
-      color: darken($borders, 50%);
-    }
+    @include flashColorOnHover(darken($borders, 50%));
 
     @include mobile {
       display: none;
@@ -105,11 +103,8 @@
       height: 10px;
       background-color: $borders;
       border-radius: 50%;
-      cursor: pointer;
 
-      &:hover {
-        background-color: darken($borders, 30%);
-      }
+      @include flashBackgroundColorOnHover(darken($borders, 30%));
 
       &_active {
         background-color: darken($borders, 30%);

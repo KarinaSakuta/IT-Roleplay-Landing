@@ -6,8 +6,8 @@ export default class Description extends Component {
     return (
       <div className="screen-container">
         <div className="description">
-            <p className="description__title">Описание игры</p>
-            <DescriptionSlider />
+          <p className="description__title">Описание игры</p>
+          <DescriptionSlider />
         </div>
       </div>
     );

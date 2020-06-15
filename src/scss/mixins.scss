@@ -47,6 +47,17 @@
   }
 }
 
+@mixin flashBackgroundColorOnHover($backgroundColor) {
+  transition: background-color 0.15s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    cursor: pointer;
+    transition: background-color 0s;
+    background-color: $backgroundColor;
+  }
+}
+
 @mixin flashColorAndBackgroundOnHover($color, $backgroundColor) {
   transition: color 0.15s, background-color 0.15s;
   transition-timing-function: ease-out;
