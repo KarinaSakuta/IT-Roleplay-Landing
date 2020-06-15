@@ -33,14 +33,6 @@ export default class DescriptionSlider extends Component {
     this.setState({ transform: transform - 100, currentDot: currentDot + 1 });
   }
 
-  onSwipedSlide = (deltaX) => {
-    if (deltaX.dir === 'Right') {
-      this.handleSliderTransformLeft();
-    } else if (deltaX.dir === 'Left') {
-      this.handleSliderTransformRight();
-    }
-  }
-
   onDotClick = (dot) => {
     const transform = -(dot * 100);
     this.setState({ transform, currentDot: dot });
@@ -61,32 +53,40 @@ export default class DescriptionSlider extends Component {
     return dots;
   }
 
+  renderSliderItems() {
+    return (
+      <>
+        <li className="description-slider__item">
+          <p className="description-slider__text">
+            На данном этапе проект представляет собой демонстрацию ролевой системы
+            в духе старых RPG, позволяет создать персонажа, повышать его уровень,
+            прокачивать характеристики, навыки,технологии и перки.
+            На странице списка присутствует краткое описание персонажей,
+            при клике на персонажа открывается страница профиля.
+          </p>
+          <img src={Rachel} className="description-slider__img" alt="rachel" />
+        </li>
+        <li className="description-slider__item">
+          <p className="description-slider__text">
+            Достижения медицины и генной инженерии позволило создать искусственных
+            людей - андроидов, названных репликантами. Репликант ничем не
+            отличался от обычного человека, кроме своего происхождения,
+            а в чем-то и превосходил его.
+          </p>
+          <img src={Rachel} className="description-slider__img" alt="rachel" />
+        </li>
+      </>
+    );
+  }
+
   render() {
     const { transform } = this.state;
 
     return (
       <div className="description-slider">
-        <Swipeable onSwiped={(deltaX) => this.onSwipedSlide(deltaX)}>
+        <Swipeable onSwipedLeft={this.handleSliderTransformRight} onSwipedRight={this.handleSliderTransformLeft}>
           <ul className="description-slider__container" style={{ transform: `translateX(${transform}%)` }}>
-            <li className="description-slider__item">
-              <p className="description-slider__text">
-                На данном этапе проект представляет собой демонстрацию ролевой системы
-                в духе старых RPG, позволяет создать персонажа, повышать его уровень,
-                прокачивать характеристики, навыки,технологии и перки.
-                На странице списка присутствует краткое описание персонажей,
-                при клике на персонажа открывается страница профиля.
-              </p>
-              <img src={Rachel} className="description-slider__img" alt="rachel" />
-            </li>
-            <li className="description-slider__item">
-              <p className="description-slider__text">
-                Достижения медицины и генной инженерии позволило создать искусственных
-                людей - андроидов, названных репликантами. Репликант ничем не
-                отличался от обычного человека, кроме своего происхождения,
-                а в чем-то и превосходил его.
-              </p>
-              <img src={Rachel} className="description-slider__img" alt="rachel" />
-            </li>
+            {this.renderSliderItems()}
           </ul>
         </Swipeable>
         <div className="description-slider__dots">

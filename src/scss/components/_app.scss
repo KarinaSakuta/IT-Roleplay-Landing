@@ -2,13 +2,12 @@
     max-width: 1200px;
     margin: 40px;
     background: rgba($absolute-black, 0.4);
-    overflow: hidden;
     
     @include border;
 
     @include mobile {
         margin: 20px;
-        max-width: 100%;
+        max-width: calc(100% - 40px);
         width: 100%;
     }
 
