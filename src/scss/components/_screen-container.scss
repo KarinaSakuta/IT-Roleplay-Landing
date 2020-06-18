@@ -1,8 +1,19 @@
 .screen-container {
     width: 100%;
     height: 100vh;
+    @include mobile {
+        height: auto;
+        min-height: 100vh;
+    }
     
     &_promo {
-        height: calc(100vh - 50px);
+        height: calc(100vh - 25px);
+
+        @include desktop {
+            height: calc(100vh - 45px);
+        }
+        @include hd {
+            height: calc(100vh - 45px);
+        }
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Favicon from 'react-favicon';
 import Promo from './Promo';
+import Description from './Description';
 import logoIcon from '../assets/img/sun.png';
 
 export default class App extends Component {
@@ -18,6 +19,7 @@ export default class App extends Component {
         {this.renderIcon()}
         <div className="app">
           <Promo />
+          <Description />
         </div>
       </>
     );
