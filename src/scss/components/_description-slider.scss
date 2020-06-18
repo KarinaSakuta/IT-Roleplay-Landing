@@ -112,11 +112,6 @@
       &:not(:last-child) {
         margin-right: 15px;
       }
-
-      @include mobile {
-        width: 15px;
-        height: 15px;
-      }
     }
   }
 }

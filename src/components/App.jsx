@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Favicon from 'react-favicon';
 import Promo from './Promo';
 import Description from './Description';
+import Screenshots from './Screenshots';
 import logoIcon from '../assets/img/sun.png';
 
 export default class App extends Component {
@@ -20,6 +21,7 @@ export default class App extends Component {
         <div className="app">
           <Promo />
           <Description />
+          <Screenshots />
         </div>
       </>
     );

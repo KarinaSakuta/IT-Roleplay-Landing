@@ -1,0 +1,238 @@
+.screenshots-slider {
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
+
+    &__container, &__item {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    &__container {
+      transition: transform .5s;
+    }
+  
+    &__item {
+        @include tablet {
+            width: 100%;
+            min-width: 100%;
+        }
+
+        @include mobile {
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+  
+    &__text {
+      margin: 20px;
+      max-width: 550px;
+  
+      @include tablet {
+        font-size: 15px;
+      }
+    }
+  
+    // &__left-btn, &__right-btn {
+    //   position: absolute;
+    //   width: 5vw;
+    //   height: 100%;
+    //   top: 0;
+    //   display: flex;
+    //   align-items: center;
+    //   font-size: 30px;
+    //   color: $borders;
+    //   background-color: transparent;
+    //   border: none;
+    //   cursor: pointer;
+    //   user-select: none;
+  
+    //   @include flashColorOnHover(darken($borders, 50%));
+  
+    //   @include mobile {
+    //     display: none;
+    //   }
+  
+    //   @include tablet  {
+    //     display: none;
+    //   }
+    // }
+  
+    // &__left-btn {
+    //   justify-content: flex-start;
+    //   padding-left: 10px;
+    //   left: 0;
+    // }
+  
+    // &__right-btn {
+    //   justify-content: flex-end;
+    //   padding-right: 10px;
+    //   right: 0;
+    // }
+  
+    &__img {
+      user-select: none;
+      max-width: 100%;
+      min-width: 900px;
+      
+      @include mobile {
+        min-width: unset;
+        width: 100%;
+      }
+  
+      @include tablet {
+        min-width: unset;
+        width: 100%;
+      }
+    }
+  
+    &__dots {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 30px auto;
+
+      @include mobile {
+        max-width: 500px;
+      }
+  
+      &-element {
+        border: 3px solid $text;
+
+        &_screen1, &_screen2, &_screen3, &_screen4, &_screen5, &_screen6 {
+          @include mobile {
+            width: 0;
+            height: 0;
+            border: 3px solid $text;
+          }
+
+          @include hd {
+            width: 160px;
+            height: 80px;
+            background-size: cover;
+          }
+          @include desktop {
+            width: 160px;
+            height: 80px;
+            background-size: cover;
+          }
+        }
+
+        &_screen1 {
+          @include desktop {
+            background: img('screenshot1.png') no-repeat;
+            background-size: cover;
+          }
+
+          @include hd {
+            background: img('screenshot1.png') no-repeat;
+            background-size: cover;
+          }
+        }
+
+        &_screen2 {
+          @include desktop {
+            background: img('screenshot2.jpg') no-repeat;
+            background-size: cover;
+          }
+
+          @include hd {
+            background: img('screenshot2.jpg') no-repeat;
+            background-size: cover;
+          }
+        }
+
+        &_screen3 {
+          @include desktop {
+            background: img('screenshot3.jpg') no-repeat;
+            background-size: cover;
+          }
+
+          @include hd {
+            background: img('screenshot3.jpg') no-repeat;
+            background-size: cover;
+          }
+        }
+
+        &_screen4 {
+          @include desktop {
+            background: img('screenshot4.jpg') no-repeat;
+            background-size: cover;
+          }
+
+          @include hd {
+            background: img('screenshot4.jpg') no-repeat;
+            background-size: cover;
+          }
+        }
+
+        &_screen5 {
+          @include desktop {
+            background: img('screenshot5.jpg') no-repeat;
+            background-size: cover;
+          }
+
+          @include hd {
+            background: img('screenshot5.jpg') no-repeat;
+            background-size: cover;
+          }
+        } 
+        &_screen6 {
+          @include desktop {
+            background: img('screenshot6.jpg') no-repeat;
+            background-size: cover;
+          }
+
+          @include hd {
+            background: img('screenshot6.jpg') no-repeat;
+            background-size: cover;
+          }
+        }
+        
+        &_active {
+          border-color: $select;
+        }
+
+        @include flashBorderOnHover($select);
+  
+        @include mobile {
+          border: none;
+          width: 10px;
+          height: 10px;
+          background-color: $borders;
+          border-radius: 50%;
+
+          @include flashBackgroundColorOnHover(darken($borders, 30%));
+
+          &_active {
+            border: none;
+            background-color: darken($borders, 30%);
+          }
+        }
+
+        @include tablet {
+          border: none;
+          width: 10px;
+          height: 10px;
+          background-color: $borders;
+          border-radius: 50%;
+
+          @include flashBackgroundColorOnHover(darken($borders, 30%));
+
+          &_active {
+            border: none;
+            background-color: darken($borders, 30%);
+          }
+        }
+  
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+      &-img {
+        width: 150px;
+        height: 70px;
+      }
+    }
+  }
+  
