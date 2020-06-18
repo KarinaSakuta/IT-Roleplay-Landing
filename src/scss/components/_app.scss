@@ -17,10 +17,10 @@
     }
 
     @include desktop {
-        min-width: 1000px;
+        width: 1200px;
     }
 
     @include hd {
-        min-width: 1200px;
+        width: 1200px;
     }
 }
